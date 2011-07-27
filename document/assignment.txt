@@ -1,0 +1,28 @@
+Assignment:
+
+Write a small ruby script (or gem, or plugin) that's tested in rspec. Keep it to a ruby 1.8.7 script
+
+Keep it under source control in git and let us know where it is so we can follow progress. 
+
+Please commit to git after each step.
+
+Steps:
+
+1) set up project to use ruby and rspec
+
+2) using nokogiri, consume the http://www.iowa-city.org/icgov/apps/police/blotter.asp?date=07192011 url (replacing the date value at the end with today's date) and return the most recent incident record containing the name, date, and charges.
+
+Fields names are provided in relation to original screen location in the attached image. 
+
+3) Add the rest of the fields identified in the attached image.
+
+4) The script should be able to take an argument, -n, --number-of-days which then parses the last n days of the posted arrests by cycling through each of the n days by changing the date value in the URL.
+
+In other words, if today is 07192011 and n is set to "3" then you should process the arrests for today and 3 preceding days, which should result in consuming these URLs:
+
+http://www.iowa-city.org/icgov/apps/police/blotter.asp?date=07192011
+http://www.iowa-city.org/icgov/apps/police/blotter.asp?date=07182011
+http://www.iowa-city.org/icgov/apps/police/blotter.asp?date=07172011
+http://www.iowa-city.org/icgov/apps/police/blotter.asp?date=07162011
+
+5) For each day, the script should create a single ArrestDay object that contains an array of Arrest objects.
