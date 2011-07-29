@@ -1,5 +1,5 @@
 class ArrestDay
-  attr_accessor :date, :consume_url, :arrests
+  attr_accessor :date, :consume_url, :arrests, :error
 
   def initialize(date, consume_url, arrests = [])
     @date = date
