@@ -33,7 +33,7 @@ class ArrestScraper
     arrest_class = Struct.new(:name, :address, :date, :dob, :location, :incident, :ca, :charges, :error)
     
     begin
-      doc = Nokogiri::HTML(open(url))
+      doc = Nokogiri::HTML(open(url).read)
           # puts doc.content
       doc.css('table.full > tbody > tr').each_with_index do |node, idx|      
         if idx > 0
