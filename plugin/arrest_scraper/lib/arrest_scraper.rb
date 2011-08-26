@@ -1,6 +1,5 @@
 require 'date'
 require 'arrest_day'
-require 'arrest'
 require 'nokogiri'
 require 'open-uri'
 
